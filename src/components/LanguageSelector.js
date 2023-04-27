@@ -7,7 +7,7 @@ const languages = ['it', 'en', 'fr']
 
 const LanguageSelector = () => {
   const currentLanguage = useSelector((state) => {
-    console.log(state)
+    // console.log(state)
     return state.language.language
   })
   const dispatch = useDispatch()
