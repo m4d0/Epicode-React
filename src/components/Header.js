@@ -1,6 +1,7 @@
 import { React } from 'react'
 import { Nav } from 'react-bootstrap'
 import LanguageSelector from './LanguageSelector'
+import Profile from './Profile'
 
 const Header = () => {
   return (
