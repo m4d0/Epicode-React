@@ -8,28 +8,33 @@ const user = {
   password: '',
 }
 
+const mockData = {
+  userProfile: {
+    email: 'm.donati@google.com',
+    name: 'Marco',
+    role: ['Admin', 'Editor'],
+    info: {},
+  },
+  token:
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
+}
+
 const SignIn = () => {
   const dispatch = useDispatch()
 
   const do_login = () => {
-    // username, password
-
-    const response = {
-      data: {
-        userProfile: {
-          email: 'm.donati@google.com',
-          name: 'Marco',
-          role: ['Admin', 'Editor'],
-          info: {},
-        },
-        token: '',
-      },
-    }
-
-    dispatch(login(response.data))
+    const response = fetch('www.google.com')
+      .then((response) => dispatch(login(mockData)))
+      .catch(() => {
+        dispatch(login(mockData))
+      })
   }
 
-  return <Button onClick={() => do_login()}>SignIn</Button>
+  return (
+    <Button className="mx-3" onClick={() => do_login()}>
+      SignIn
+    </Button>
+  )
 }
 
 export default SignIn

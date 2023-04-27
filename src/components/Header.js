@@ -4,6 +4,7 @@ import LanguageSelector from './LanguageSelector'
 import Profile from './Profile'
 import { useSelector } from 'react-redux'
 import SignIn from './SignIn'
+import LamiaGet from './LamiaGet'
 
 const Header = () => {
   const isLoggedIn = useSelector((state) => {
@@ -12,6 +13,7 @@ const Header = () => {
 
   return (
     <Nav>
+      <LamiaGet />
       <LanguageSelector />
       {isLoggedIn && <Profile />}
       {!isLoggedIn && <SignIn />}

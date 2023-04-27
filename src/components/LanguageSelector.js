@@ -15,7 +15,8 @@ const LanguageSelector = () => {
   return languages.map((lang, idx) => {
     return (
       <Button
-        id={`lang-${idx}`}
+        className="mx-1"
+        key={`lang-${idx}`}
         variant={[currentLanguage === lang ? 'primary' : 'success']}
         onClick={() => dispatch(setLanguage(lang))}
       >
