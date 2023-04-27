@@ -1,13 +1,13 @@
 import logo from './logo.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Button from 'react-bootstrap/Button'
-import Paragrafo from './components/Paragrafo'
+import Header from './components/Header'
 
 const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <Header />
         <img src={logo} className="App-logo" alt="logo" />
       </header>
     </div>
