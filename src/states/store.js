@@ -3,24 +3,11 @@ import { createSlice } from '@reduxjs/toolkit'
 import languageReducer from './LanguageSlice'
 import counterReducer from './CounterSlice'
 
-// const initialLanguage = {
-//   language: 'it',
-// }
 const initialAuth = {
   isAuth: false,
   user: {},
   token: null,
 }
-
-// const languages = createSlice({
-//   name: 'lang',
-//   initialLanguage,
-//   reducers: {
-//     setLanguage: (state, action) => {
-//       return { ...state, language: action.language }
-//     },
-//   },
-// })
 
 const authenticator = createSlice({
   name: 'auth',
@@ -42,7 +29,6 @@ const authenticator = createSlice({
 
 export const store = configureStore({
   reducer: {
-    //languages,
     authenticator: authenticator,
     language: languageReducer,
     counter: counterReducer,

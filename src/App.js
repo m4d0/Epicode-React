@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Header from './components/Header'
 import { store } from './states/store'
 import { Provider } from 'react-redux'
+import { Counter } from './components/Counter'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <header className="App-header">
           <Header />
           <img src={logo} className="App-logo" alt="logo" />
+          <Counter />
         </header>
       </div>
     </Provider>

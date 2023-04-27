@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Button } from 'react-bootstrap'
 import { setLanguage } from '../states/LanguageSlice'
 
-const languages = ['it', 'en', 'FR']
+const languages = ['it', 'en', 'fr']
 
 const LanguageSelector = () => {
   const currentLanguage = useSelector((state) => {
