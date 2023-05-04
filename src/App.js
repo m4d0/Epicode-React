@@ -9,6 +9,8 @@ import Home from './components/Home'
 import Blogs from './components/Blogs'
 import Contact from './components/Contact'
 import NoPage from './components/NoPage'
+import Profile from './components/Profile'
+import Prodotto from './components/Prodotto'
 
 const App = () => {
   return (
@@ -19,6 +21,8 @@ const App = () => {
             <Route index element={<Home />} />
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/prodotti" element={<Prodotto />} />
+            <Route path="/prodotti/:prodId" element={<Prodotto />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
