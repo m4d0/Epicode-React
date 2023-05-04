@@ -1,22 +1,28 @@
-import logo from './logo.svg'
 import './App.css'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Header from './components/Header'
 import { store } from './states/store'
 import { Provider } from 'react-redux'
-import { Counter } from './components/Counter'
-import { Test } from './components/Test'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Layout from './components/Layout'
+import Home from './components/Home'
+import Blogs from './components/Blogs'
+import Contact from './components/Contact'
+import NoPage from './components/NoPage'
 
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="App">
-        <header className="App-header">
-          <Header />
-          <img src={logo} className="App-logo" alt="logo" />
-          <Counter />
-        </header>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </Provider>
   )
 }
